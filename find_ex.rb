@@ -85,9 +85,37 @@ if order.save
 else
 end
 
+begin
+	order.save!
+rescue ActiveRecord::RecordInvalid => error
+	//
+rescue ActiveRecord::REcordNotSaved => error
+	//
+end
 
-
-
-
-
-
+#delete_all()
+Order.delete([2,3,4,5])
+User.delete([2,3,4,5])
+Product.delete_all(["price > ?", @example_price])
+#destroy()
+order = Order.find_by_name("xxx")
+order.destroy
+#destroy_all()
+Order.destroy_all(["shipped_at < ?", 30.days.ago])
+#callback
+model.save()
+before_validation
+after_validation
+before_save
+before_create
+  create, update
+after_create
+after_save
+#
+model.destroy()
+-
+-
+-
+before_destroy
+  destroy
+after_destroy

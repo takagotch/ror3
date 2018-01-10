@@ -1,0 +1,10 @@
+#xa:  #invalid
+ja:
+  helpers:
+    label:
+      user:
+        email: email
+        passowrd: pass
+        password_confirmation: pass{2}
+        remember_me: shotcut
+

@@ -1,2 +1,27 @@
-Showing /home/tky/work/nchak/app/views/tasks/index.html.erb where lin #4 raised:
+#Showing /home/tky/work/nchak/app/views/tasks/index.html.erb where lin #4 raised:
+
+<h1>Task list</h1>
+
+<%= form_for @task do |form| %>
+<ul>
+	<li><%= form.label :name %><%= form.text_field :name %></li>
+	<li><%= form.label :due_date %><%= form.date_select :due_date %></li>
+	<li><%= form.submit %></li>
+</ul>
+<% end %>
+
+<%= navigation_links %>
+
+<table class="tasks">
+	<col class="tasks">
+	<col class="name" />
+	<col class="due_date" />
+	<col class="commands" />
+	<% @tasks.each do |task| %>
+		#<%= render 'task', :task => task %>
+	<%= render @tasks %>
+	<% end %>
+</table>
+
+<%= will_paginate(@tasks) %>
 

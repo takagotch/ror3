@@ -1,3 +1,7 @@
+class Product < ActiveResource::Base
+	self.site = 'http://ex:ex@localhost:8080'
+end
+
 //app/models/.
 def self .latest
 	Product.order('updated_at desc').first

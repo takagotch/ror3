@@ -10,6 +10,14 @@ sqlite3 db/development.sqlite3 ".schema tickets"
 
 rails_env=production rake db:migratae
 
+rails c
+Product.find(3).title
+#=> "title"
+p = Product.find(3)
+puts p.price
+p.price = BigDecimal.new(p.price)-5
+p.save
+
 Order.find(1).name
 Order.find(1).line_items
 
@@ -20,5 +28,6 @@ li.price*=0.8
 
 li2 = LineItem.new(:order_id=>1, :product_id=>2, :quantity=>1, :price=>0.0)
 li2save
+
 
 

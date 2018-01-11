@@ -8,6 +8,12 @@ def index
 	@tasks = Task.undone.paginate(:page => params[:page], :per_page => 10)
 end
 
+def create
+	@task = Task.new(params[:taks])
+	@taks.save
+	redirect_to :task
+end
+
 def done
 	@tasks = Task.new
 #@tasks = Task.all(:conditions => { :done => true }, :order => "due_date")

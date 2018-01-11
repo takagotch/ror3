@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title><%= @title %></title>
+	</head>
+	<body>
+		<h1><%= @title %></h1>
+		<%= yield :layout %>
+		
+		<%= content_for(:sidebar)  do %>
+			<ul>
+				<li><%= "" %></li>
+			</ul>
+		<% end %>
+		
+		<p>
+		</p>
+
+		<div class="sidebar">
+			<div class="page-specofoc-sidebar">
+				<%= yield :sidebar %>
+			</div>
+		</div>
+
+	<%= render(partial: "article", object: @an_article) %>
+	/*
+	*	<div class="article">
+	*		<div class="articleheader">
+	*			<h3><%= article.title %></h3>
+	*		</div>
+	*		<div class="articlebody">
+	*			<%= article.body %>
+	*		</div>
+	*	</div>
+	*/
+	<%= render(partial: "article") %>
+	 /*
+	 *render(partial: 'article',
+	 *       object:  @an_article,
+	 *       locales: { authorized_by: session[:user_name],
+	 *                  form_ip:       request.remote_ip })
+	 *
+	 */
+	 <%= render(partial: "article", collection: @article_list) %>
+
+	 <%= render(particle: "animal",
+		    collection: %w{ ant bee cat dog },
+	    	    spacer_template: "spacer")
+	 %>
+
+ 	<p><%= animal %></p>
+	<hr />
+
+	#shared_template
+	<%= render("shared/header", title: @article/title) %>
+	<%= render(partial: "shared/post", object" @article) %>
+
+	#shared_partial_template
+	<%= render partial: "user", layout: "administrator" %>
+	<%= redrer layout: "administrator" do %>
+	#...
+	<% end %>
+
+	</body>
+</html>
+

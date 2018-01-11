@@ -1,0 +1,19 @@
+<%= @dyanamic_content %>
+
+<% cache(:action => 'list', :part => 'articles') do %>
+	<ul>
+		<% for_article in Article.find_recent %>
+		<li><p><%= h(article.body)%></p></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<% cache(:action => 'list', :part => 'contents') do %>
+	<p>
+	Sum: <%= @article_count %>
+	</p>
+<% end %>
+
+<%= @dynamic_content %>
+
+

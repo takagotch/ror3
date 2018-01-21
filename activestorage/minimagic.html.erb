@@ -1,0 +1,13 @@
+<%= image_tag user.avatar.variant(resize: "100x100") %>
+
+<ul>
+	<% @message.files.each do |file| %>
+		<li>
+			<%= image_tag file.preview(resize: "100x100>") %>
+		</li>
+	<% end %>
+</ul>
+
+#ffmpeg video
+#mutool pdf
+

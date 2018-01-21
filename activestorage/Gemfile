@@ -1,0 +1,6 @@
+gem "aws-sdk-s3",                     require: false
+gem "azure-storage",                  require: false
+gem "google-cloud-storage", "~> 1.3", require: false
+
+gem 'mini_magick'
+

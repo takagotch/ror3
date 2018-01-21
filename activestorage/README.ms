@@ -1,0 +1,3 @@
+- carrierwave
+- paperclip
+

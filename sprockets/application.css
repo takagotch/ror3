@@ -1,0 +1,14 @@
+/*
+ *= require_self
+ *= require_tree .
+ *
+ *= require reset
+ *= require layout
+ *= require chrome
+ *
+ */
+#--skip-sprockets
+#app/assets/js/project.js.coffee
+#app/assets/stylesheets/project.css.scss
+
+

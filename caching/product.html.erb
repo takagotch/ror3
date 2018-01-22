@@ -1,0 +1,30 @@
+<% @products.each do |product| %>
+	<% cache product do %>
+		<%= render product %>
+	<% end %>
+<% end %>
+
+#cache_if
+#cache_unless
+<% cache_if admin?, product do %>
+	<%= render product %>
+<% end %>
+
+#render
+#cached: true
+<%= render partial: 'products/product', collection: @products, cached: true %>
+
+#updated_at
+<% cache product do %>
+  <%= render product.games %>
+<% end %>
+
+<% cache game do %>
+  <%= render game%>
+<% end %>
+
+
+
+
+
+

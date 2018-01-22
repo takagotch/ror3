@@ -79,3 +79,18 @@ class UserMailer < ApplicationMailer
   end
 end
 
+#delivery_method_options:
+#.smtp_user
+class UserMailer < ApplicationMailer
+  def welcome_email(user, company)
+    @user = user
+    @url  = user_url(@user)
+    delivery_options = { user_name: company.smtp_user,
+			 password: company.smtp_password,
+			 address: company.smtp_host }
+    mail(to: @user.email,
+	subject: "",
+	delivery_method_options: delivery_otions)
+  end
+end
+

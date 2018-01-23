@@ -1,0 +1,15 @@
+<%= user_usl(@user, host: 'ex.com') %>
+
+<%= url_for(host: 'ex.com',
+	    controller: 'welcome',
+	    action: 'greeting') %>
+
+
+#config/application.rb
+#config.action_mailer.default_url_options = { host: 'ex.com' }
+<%= link_to 'welcome', welcome_url %>
+<%- link_to 'welcome', welcome_path %> #mail False
+
+
+
+
